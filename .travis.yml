@@ -1,0 +1,16 @@
+jobs:
+  include:
+  - stage: string with ampersand
+    script: false && echo this should not appear
+  - stage: array of strings
+    script:
+    - "false"
+    - echo this should not appear
+  - stage: multi-line string with ampersand
+    script: |
+      false &&
+      echo this should not appear
+  - stage: multi-line block without ampersand
+    script: |
+      "false"
+      echo this should not appear
