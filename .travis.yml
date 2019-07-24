@@ -1,16 +1,22 @@
 jobs:
+  allow_failures:
+  - node_js: latest
   include:
   - stage: string with ampersand
+    node_js: latest
     script: false && echo this should not appear
   - stage: array of strings
+    node_js: latest
     script:
     - "false"
     - echo this should not appear
   - stage: multi-line string with ampersand
+    node_js: latest
     script: |
       false &&
       echo this should not appear
   - stage: multi-line block without ampersand
+    node_js: latest
     script: |
       "false"
       echo this should not appear
